@@ -1,0 +1,4 @@
+to add your stuff to the website, all you need to do is upload all your code into this folder.
+
+if you need to change the names of folders, make sure you update it in the "index.php" file.
+example: currently, in index.php it points to "/capstone/tmdb/search-options.php" which brings you to my page with all the stuff i made for my end of the project.
