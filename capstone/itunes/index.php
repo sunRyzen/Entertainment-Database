@@ -1,4 +1,4 @@
-        <?php
+<?php
 $servername = "sql9.freemysqlhosting.net";
 $username = "sql9608271";
 $password = "GNMjTMrfNs";
