@@ -57,13 +57,12 @@ if (isset($_GET['search_query'])) {
 
 // Step 3: Perform the search
 if (isset($_GET['search'])) {
-    $query = "SELECT * FROM book WHERE title LIKE '%$search_query%' ORDER BY date DESC";
+    $query = "SELECT * FROM book WHERE title LIKE '%$search_query%' ORDER BY date DESC LIMIT 50";
     $result = mysqli_query($conn, $query);
 } else {
-    $query = "SELECT * FROM book ORDER BY date DESC";
+    $query = "SELECT * FROM book ORDER BY date DESC LIMIT 50";
     $result = mysqli_query($conn, $query);
 }
-
 $i = 0;
 // Step 4: Display the results
 if ($result && mysqli_num_rows($result) > 0) {
