@@ -51,13 +51,12 @@
 echo "<h1 style='font-size: 48px;'>Books</h1>";
   //start books code below. all you need to do is print out the results saved in your db. no need to make an extra connection, its already connected.
 
-echo "<h1 style='font-size: 48px;'>Music</h1>";
+echo "<h1 style='font-size: 48px;'>Songs</h1>";
   //start music code below. all you need to do is print out the results saved in your db. no need to make an extra connection, its already connected.
   // Songs
   $sql = "SELECT * FROM favoritesong";
   $result = mysqli_query($conn, $sql);
 
-  echo "<h1 style='font-size: 48px;'>Songs</h1>";
   if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
       echo "<h2>" . $row["track_name"] . "</h2>";
