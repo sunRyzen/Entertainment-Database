@@ -1,10 +1,18 @@
+<button onclick="goBack()">Back</button>
+
+<script>
+function goBack() {
+  window.location.href = "search-options.php";
+}
+</script>
+<link rel="stylesheet" type="text/css" href="styles2.css">
 <?php
   require 'includes/tmdb-api.php';
 
   $tmdb = new TMDB();
   $tmdb->setAPIKey('21855c98a465091b126f54446a358b4a');
 
-  $shows = $tmdb->getPopularTVShows();
+  $shows = $tmdb->getTopRatedTVShows();
 
   // Output the results
   if ($shows) {
