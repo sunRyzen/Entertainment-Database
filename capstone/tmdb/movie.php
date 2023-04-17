@@ -9,14 +9,16 @@
     $movie = $tmdb->getMovie($_GET['id']);
   }
   //above gets the TMDB wrapper, calls it to get the movie by id.
-  //below starts the database connection, 
-  
+  //below starts the database connection,
+
     if (isset($_POST['save'])) {
-    $host = "sql9.freemysqlhosting.net";
-    $username = "sql9608271";
-    $password = "GNMjTMrfNs";
-    $database = "sql9608271";
-	//should probably make this an include
+
+//db connection to main db
+  $host = "sql9.freemysqlhosting.net";
+  $username = "sql9611840";
+  $password = "n74TrMNk2r";
+  $database = "sql9611840";
+
 
     $conn = new mysqli($host, $username, $password, $database);
 
@@ -46,6 +48,14 @@
 <html>
   <head>
     <title>Movie Information</title>
+        <link rel="stylesheet" type="text/css" href="styles2.css">
+                <button onclick="goBack()">Back</button>
+
+<script>
+function goBack() {
+  window.location.href = "search-options.php";
+}
+</script>
   </head>
   <body>
     <?php if (isset($movie)): ?>
@@ -56,8 +66,8 @@
         <li>Release Date: <?php echo $movie->getReleaseDate(); ?></li>
         <li>Popularity: <?php echo $movie->getPopularity(); ?></li>
       </ul>
-	  <form action="movie.php?id=<?php echo $_GET['id']; ?>" method="post">
-        <input type="submit" name="save" value="Add to Watch Later">
+          <form action="movie.php?id=<?php echo $_GET['id']; ?>" method="post">
+        <input type="submit" name="save" value="Add to Favorites">
       </form>
     <?php else: ?>
       <h1>Movie not found</h1>
