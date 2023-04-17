@@ -48,7 +48,11 @@
     echo "No TV shows found.";
   }
 
-  //start itunes and books code below. all you need to do is print out the results saved in your db. no need to make an extra connection, its already connected.
+echo "<h1 style='font-size: 48px;'>Books</h1>";
+  //start books code below. all you need to do is print out the results saved in your db. no need to make an extra connection, its already connected.
+
+echo "<h1 style='font-size: 48px;'>Music</h1>";
+  //start music code below. all you need to do is print out the results saved in your db. no need to make an extra connection, its already connected.
 
   $conn->close();
 ?>
