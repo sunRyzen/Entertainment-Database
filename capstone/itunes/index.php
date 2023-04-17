@@ -72,9 +72,15 @@ if ($conn->connect_error) {
 		button {
 			border-radius: 10px;
 		}
+		
+		.back-btn {
+			position: absolute;
+			left: 5px;
+			top: 5px;
+	    }
 
     </style>
-	<button onclick="goBack()">Back</button>
+	<button class="back-btn" onclick="goBack()">Back</button>
 		
 		<script>
 	function goBack() {
@@ -185,8 +191,7 @@ if ($conn->connect_error) {
 					  }
 					}
 				}
-				?>
-
+					?>
         </table>
   </div>
   </div>
