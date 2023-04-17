@@ -53,6 +53,23 @@ echo "<h1 style='font-size: 48px;'>Books</h1>";
 
 echo "<h1 style='font-size: 48px;'>Music</h1>";
   //start music code below. all you need to do is print out the results saved in your db. no need to make an extra connection, its already connected.
+  // Songs
+  $sql = "SELECT * FROM favoritesong";
+  $result = mysqli_query($conn, $sql);
+
+  echo "<h1 style='font-size: 48px;'>Songs</h1>";
+  if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      echo "<h2>" . $row["track_name"] . "</h2>";
+      echo "<p>Artist: " . $row["artist_name"] . "</p>";
+      echo "<p>Release Date: " . $row["release_date"] . "</p>";
+      echo "<p>Explicitness: " . $row["explicitness"] . "</p>";
+	  echo "<p>Genre: " . $row["primary_genre"] . "</p>";
+      echo "<hr>";
+    }
+  } else {
+    echo "No Songs found.";
+  }
 
   $conn->close();
 ?>
