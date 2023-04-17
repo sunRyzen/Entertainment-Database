@@ -2,13 +2,16 @@
 <html>
 <head>
   <title>Welcome to the Entertainment Database</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
   <h1>Welcome to the Entertainment Database</h1>
   <ul>
-    <li><a href="/capstone/tmdb/search-options.php">The Movie Database</a></li>
-    <li><a href="/capstone/test1/search-options.php">Test 1</a></li>
-    <li><a href="/capstone/test2/search.php">Test 2</a></li>
+    <li><a href="tmdb/search-options.php">The Movie Database</a></li>
+    <li><a href="itunes/something.php">iTunes Lookup (still needs to be added)<>
+    <li><a href="books/something.php">Book Lookup (still needs to be added)</a>>
+    <li><a href="favorites.php">Favorites Page</a></li>
   </ul>
 </body>
 </html>
+
