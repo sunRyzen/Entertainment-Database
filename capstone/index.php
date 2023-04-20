@@ -9,7 +9,7 @@
   <ul>
     <li><a href="tmdb/search-options.php">The Movie Database</a></li>
     <li><a href="itunes/something.php">iTunes Lookup (still needs to be added)<>
-    <li><a href="books/something.php">Book Lookup (still needs to be added)</a>>
+    <li><a href="http://elvis.rowan.edu/~rejisa33/">Book Lookup (still needs to be added)</a>>
     <li><a href="favorites.php">Favorites Page</a></li>
   </ul>
 </body>
