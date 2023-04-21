@@ -63,13 +63,27 @@ if ($conn->connect_error) {
             top: 5px;
 
         }
+	    
+	.sh-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
 
     </style>
         <button class="back-btn" onclick="goBack()">Back to Entertainment Database</button>
 
-                <script>
+         <script>
         function goBack() {
           window.location.href = "http://elvis.rowan.edu/~umanaj47/";
+        }
+        </script>
+
+	<button class="sh-btn" onclick="searchhistory()">View Search History</button>
+		
+	<script>
+        function searchhistory() {
+          window.location.href = "http://elvis.rowan.edu/~zhengj29/search_history.php";
         }
         </script>
 </head>
