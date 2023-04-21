@@ -151,7 +151,7 @@ if ($conn->connect_error) {
 										 $explicitness = mysqli_real_escape_string($conn, $row['explicitness']);
 										 $primary_genre = mysqli_real_escape_string($conn, $row['primary_genre']);
 										 $track_url = mysqli_real_escape_string($conn, $row['track_url']);
-										 $select_sql = "SELECT * FROM ssearch_history WHERE artist_name = '$artist_name' AND track_name = '$track_name' AND release_date = '$release_date' AND explicitness = '$explicitness' AND primary_genre = '$primary_genre' AND track_url = '$track_url'";
+										 $select_sql = "SELECT * FROM ssearch_history WHERE artist_name = '$artist_name' AND track_name = '$track_name' AND release_date = '$release_date' AND explicitness = '$explicitness' AND primary_genre = '$primary_genre'";
 										 $select_result = mysqli_query($conn, $select_sql);
 										 if(mysqli_num_rows($select_result) == 0) {
 										 // Record does not exist, insert it
