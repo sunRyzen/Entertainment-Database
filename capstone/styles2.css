@@ -46,3 +46,11 @@ a:hover, a:active {
   color: white;
   text-decoration: underline;
 }
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+p {
+  text-align: center;
+}
