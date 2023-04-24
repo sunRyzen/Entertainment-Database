@@ -7,6 +7,7 @@
 
   if (isset($_GET['id'])) {
     $movie = $tmdb->getMovie($_GET['id']);
+    $genres = $movie->getGenres();
   }
   //above gets the TMDB wrapper, calls it to get the movie by id.
   //below starts the database connection,
@@ -35,7 +36,7 @@
     $sql = "INSERT INTO movies (title, overview, release_date, popularity, json_data) VALUES ('$title', '$overview', '$release_date', '$popularity', '$json_data')";
 
     if ($conn->query($sql) === TRUE) {
-      echo "Movie data saved successfully";
+      echo " ";
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -48,27 +49,77 @@
 <html>
   <head>
     <title>Movie Information</title>
-        <link rel="stylesheet" type="text/css" href="styles2.css">
-                <button onclick="goBack()">Back</button>
+        <style>
+        body {
+        background-color: #333;
+                color: white;
+    }
+        img {
+          display: block;
+          margin: 0 auto;
+    }
+        .back-button {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
 
-<script>
-function goBack() {
-  window.location.href = "search-options.php";
-}
-</script>
+        .header-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+      }
+
+        .results-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                position: relative;
+                right: 20px;
+          }
+
+        .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+        .message-container {
+                display: flex;
+        justify-content: center;
+        margin-top: 10px;
+                color: green;
+          }
+        </style>
   </head>
   <body>
     <?php if (isset($movie)): ?>
+          <div class="header-container">
       <h1>Movie Information</h1>
-      <ul>
+          <a href="movie-search.php" class="back-button"><button>Back</button></a>
+          </div>
+          <img src="<?php echo 'https://image.tmdb.org/t/p/w500' . $movie->getPosterPath(); ?>" alt="<?php echo $movie->getName(); ?>" style="max-width: 300px; margin: 0 auto;">
+          <div class="results-container">
+      <ul style="list-style: none;">
         <li>Title: <?php echo $movie->getTitle(); ?></li>
         <li>Overview: <?php echo $movie->getOverview(); ?></li>
         <li>Release Date: <?php echo $movie->getReleaseDate(); ?></li>
         <li>Popularity: <?php echo $movie->getPopularity(); ?></li>
+        <li>Genre(s): <?php foreach($genres as $genre) { echo $genre->getName() . ' '; } ?></li>
       </ul>
+          </div>
+          <div class="button-container">
           <form action="movie.php?id=<?php echo $_GET['id']; ?>" method="post">
         <input type="submit" name="save" value="Add to Favorites">
       </form>
+          </div>
+          <?php if (isset($_POST['save'])): ?>
+          <div class="message-container">
+                Movie data saved successfully
+          </div>
+          <?php endif; ?>
     <?php else: ?>
       <h1>Movie not found</h1>
     <?php endif; ?>
