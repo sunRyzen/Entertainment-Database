@@ -36,6 +36,7 @@
 <html>
   <head>
     <title>TV Search</title>
+    <link rel="stylesheet" type="text/css" href="stylestext.css">
         <style>
           body {
                 background-color: #333;
