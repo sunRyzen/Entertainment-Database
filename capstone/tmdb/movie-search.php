@@ -101,7 +101,9 @@
         margin: 10px;
       }
     </style>
+  <link rel="stylesheet" type="text/css" href="stylestext.css">
   </head>
+  <span style="font-family: Arial, Helvetica, sans-serif">
   <body>
     <div class="header-container">
       <h1>Movie Search</h1>
@@ -133,4 +135,5 @@
     <?php endif; ?>
         </div>
   </body>
+  </span>
 </html>
