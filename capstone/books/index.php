@@ -136,19 +136,13 @@ body.dark-mode {
             </div>
         </div>
     </form>
-
-    <div class="btn-group">
-
-        <a href="http://elvis.rowan.edu/~rejisa33/fav"><button class="btn btn-secondary">Book Favorites</button></a>
-        <a href="http://elvis.rowan.edu/~umanaj47/favorites.php"><button class="btn btn-secondary">All Favorites</button></a>
-        <a href="http://elvis.rowan.edu/~rejisa33/search-history.php"><button class="btn btn-secondary">Redirect to Search History</button></a>
-        <a href="http://elvis.rowan.edu/~umanaj47/"><button class="btn btn-secondary">Redirect to Main Page</button></a>
-
-    <button class="toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
-
-
-    </div>
-</div>
+<div class="btn-group d-flex flex-wrap flex-column justify-content-center">
+  <a href="http://elvis.rowan.edu/~rejisa33/fav" class="btn btn-success btn-lg mx-2 mb-2">Book Favorites</a>
+  <a href="http://elvis.rowan.edu/~rejisa33/search-history.php" class="btn btn-success btn-lg mx-2 mb-2">Search History</a>
+  <a href="http://elvis.rowan.edu/~umanaj47/" class="btn btn-success btn-lg mx-2 mb-2">Main Page</a>
+<a href="http://elvis.rowan.edu/~umanaj47/favorites.php" class="btn btn-success btn-lg mx-2 mb-2">All Favorites</a>
+  <button class="btn btn-success btn-lg mx-2 mb-2 toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
+</div></div>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
