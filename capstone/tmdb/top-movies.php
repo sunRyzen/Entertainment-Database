@@ -2,10 +2,11 @@
 
 <script>
 function goBack() {
-  window.location.href = "search-options.php";
+  window.location.href = "movie-search.php";
 }
 </script>
 <link rel="stylesheet" type="text/css" href="styles2.css">
+<title>Top Movies</title>
 
 <?php
   require 'includes/tmdb-api.php';
