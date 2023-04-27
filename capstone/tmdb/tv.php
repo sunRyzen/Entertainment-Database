@@ -91,6 +91,7 @@
           }
         </style>
   </head>
+  <link rel="stylesheet" type="text/css" href="stylestext.css">
   <body>
     <?php if (isset($tv)): ?>
         <div class="header-container">
