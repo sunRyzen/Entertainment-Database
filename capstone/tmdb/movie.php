@@ -94,6 +94,7 @@
           }
         </style>
   </head>
+  <link rel="stylesheet" type="text/css" href="stylestext.css">
   <body>
     <?php if (isset($movie)): ?>
           <div class="header-container">
