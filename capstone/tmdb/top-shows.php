@@ -2,7 +2,7 @@
 
 <script>
 function goBack() {
-  window.location.href = "search-options.php";
+  window.location.href = "tv-search.php";
 }
 </script>
 <link rel="stylesheet" type="text/css" href="styles2.css">
