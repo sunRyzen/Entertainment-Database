@@ -1,37 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Book Search</title>
 
-  <title>Book Search</title>
-  <style>
-<!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <style>
-        h1 {
-            text-align: center;
+body.dark-mode {
+            background-color: #000;
+            color: #fff;
         }
 
-        h2 {
+        h1, h2 {
             text-align: center;
-            padding: 12px;
-            margin: 8px 0;
+            margin-top: 40px;
         }
 
         body {
             background-color: #333;
-			color: #FFF;
+            color: #FFF;
         }
 
         form {
-            width: 300px;
-            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
         }
 
-        input[type=text], input[type=submit] {
-            width: 100%;
-            padding: 12px;
+        input[type=text] {
+            flex: 1;
+            margin-right: 10px;
+            width: 300px;
+            height: 60px;
+            padding: 12px 16px;
             margin: 8px 0;
             display: inline-block;
             border: 1px solid #ccc;
             box-sizing: border-box;
+            border-radius: 10px;
+        }
+
+        input[type=submit] {
+            margin-left: 10px;
+            width: 150px;
+                height: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+  input[type=submit]:hover {
+            background-color: #4CAF50;
         }
 
         .light-mode {
@@ -51,15 +77,83 @@
         .light-mode .text-danger {
             color: red;
         }
+
+        .btn-group {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn-group button {
+            margin-right: 10px;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+            color: #fff;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+                border-radius: 10px;
+                background-color: #FF0000;
+                border-color: #FF0000;
+                color: #fff;
+            border-radius: 10px
+
+
+        }
+
+        button {
+            border-radius: 0;
+        }
+
+
     </style>
 </head>
 <body>
-  <h2>Book Search</h2>
-  <form action="search.php" method="get">
-    <input type="text" name="query" placeholder="Enter search query">
-    <input type="submit" value="Search">
-  </form>
-<a href="favorites.php"><button>View Favorites</button></a>
-  <a href="http://elvis.rowan.edu/~rejisa33/search-history.php"><button>Redirect to Search history</button></a>
+<div class="container">
+    <script>
+        function goBack() {
+            window.location.href = "http://elvis.rowan.edu/~umanaj47/";
+        }
+
+        function toggleDarkMode() {
+            const body = document.querySelector('body');
+            body.classList.toggle('dark-mode');
+        }
+    </script>
+
+    <h2>Book Search</h2>
+    <button class="back-btn" onclick="goBack()">Back</button>
+    <form action="search.php" method="get">
+        <div class="input-group mb-3">
+
+            <input type="text" name="query" placeholder="Enter search query" class="form-control">
+            <div class="input-group-append">
+                <button class="btn btn-success" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="btn-group">
+
+        <a href="http://elvis.rowan.edu/~rejisa33/fav"><button class="btn btn-secondary">Book Favorites</button></a>
+        <a href="http://elvis.rowan.edu/~umanaj47/favorites.php"><button class="btn btn-secondary">All Favorites</button></a>
+        <a href="http://elvis.rowan.edu/~rejisa33/search-history.php"><button class="btn btn-secondary">Redirect to Search History</button></a>
+        <a href="http://elvis.rowan.edu/~umanaj47/"><button class="btn btn-secondary">Redirect to Main Page</button></a>
+
+    <button class="toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
+
+
+    </div>
+</div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+
